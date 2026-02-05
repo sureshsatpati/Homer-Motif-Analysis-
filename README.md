@@ -27,9 +27,13 @@ BED or FASTA files (for input peak files or genomic sequences)
 
 # Directories
 BED_DIR="..."
+
 GENOME="mm10"
+
 PREPARSED_DIR=".."
+
 OUTPUT_BASE = "${BED_DIR}/motif_results"
+
 LSF_SCRIPTS = "${BED_DIR}/lsf_jobs"
 
 # Create needed dirs
@@ -38,9 +42,13 @@ mkdir -p "$LSF_SCRIPTS"
 
 # Loop through .bed files
 for BED_FILE in "$BED_DIR"/*.bed; do
+
     BED_FILENAME=$(basename "$BED_FILE")
+    
     JOB_NAME="motif_${BED_FILENAME%.bed}"
+    
     OUTPUT_DIR="${OUTPUT_BASE}/${BED_FILENAME%.bed}"
+    
     LSF_FILE="${LSF_SCRIPTS}/${JOB_NAME}.lsf"
 
     mkdir -p "$OUTPUT_DIR"
@@ -48,16 +56,27 @@ for BED_FILE in "$BED_DIR"/*.bed; do
     # Write the LSF job file
     cat <<EOF > "$LSF_FILE"
 BSUB -W 240:00
+
 BSUB -o \${OUTPUT_DIR}/stdout.log
+
 BSUB -e \${OUTPUT_DIR}/stderr.log
+
 BSUB -cwd $PWD
+
 BSUB -q vlong 
+
 BSUB -n 1 
+
 BSUB -M 80
+
 BSUB -R "rusage[mem=80]"
+
 BSUB -J $JOB_NAME
+
 BSUB -u ssatpati@mdanderson.org
+
 BSUB -B
+
 BSUB -N
 
 module load homer
@@ -66,6 +85,7 @@ findMotifsGenome.pl "$BED_FILE" "$GENOME" "$OUTPUT_DIR" -size 200 -len 8  -prepa
 EOF
 
     # Submit the job
+    
     bsub < "$LSF_FILE"
 
     echo "✅ Submitted: $JOB_NAME"
