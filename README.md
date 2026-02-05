@@ -47,18 +47,18 @@ for BED_FILE in "$BED_DIR"/*.bed; do
 
     # Write the LSF job file
     cat <<EOF > "$LSF_FILE"
-#BSUB -W 240:00
-#BSUB -o ${OUTPUT_DIR}/stdout.log
-#BSUB -e ${OUTPUT_DIR}/stderr.log
-#BSUB -cwd $PWD
-#BSUB -q vlong 
-#BSUB -n 1 
-#BSUB -M 80
-#BSUB -R "rusage[mem=80]"
-#BSUB -J $JOB_NAME
-##BSUB -u ssatpati@mdanderson.org
-#BSUB -B
-#BSUB -N
+BSUB -W 240:00
+BSUB -o ${OUTPUT_DIR}/stdout.log
+BSUB -e ${OUTPUT_DIR}/stderr.log
+BSUB -cwd $PWD
+BSUB -q vlong 
+BSUB -n 1 
+BSUB -M 80
+BSUB -R "rusage[mem=80]"
+BSUB -J $JOB_NAME
+BSUB -u ssatpati@mdanderson.org
+BSUB -B
+BSUB -N
 
 module load homer
 
