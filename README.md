@@ -26,11 +26,11 @@ BED or FASTA files (for input peak files or genomic sequences)
 #!/bin/bash
 
 # Directories
-BED_DIR=""
+BED_DIR="..."
 GENOME="mm10"
-PREPARSED_DIR=""
-OUTPUT_BASE="${BED_DIR}/motif_results"
-LSF_SCRIPTS="${BED_DIR}/lsf_jobs"
+PREPARSED_DIR=".."
+OUTPUT_BASE = "${BED_DIR}/motif_results"
+LSF_SCRIPTS = "${BED_DIR}/lsf_jobs"
 
 # Create needed dirs
 mkdir -p "$OUTPUT_BASE"
