@@ -1,9 +1,9 @@
 ## Homer-Motif-Analysis
-# HOMER Analysis for Transcription Factor Binding and Motif Enrichment
+HOMER Analysis for Transcription Factor Binding and Motif Enrichment
 
 This repository contains code and resources for performing HOMER (Hypergeometric Optimization of Motif EnRichment) analysis on genomic data. HOMER is a widely-used tool for identifying transcription factor (TF) binding sites, analyzing motif enrichment, and performing peak annotation in ChIP-seq, ATAC-seq, and other genomic datasets. This analysis pipeline focuses on utilizing HOMER’s motif discovery capabilities to understand regulatory networks and identify key TFs that may be involved in gene expression regulation.
 
-#Key Features:
+# Key Features:
 
 Motif Enrichment Analysis: Detects enriched transcription factor binding motifs within genomic regions such as ChIP-seq peaks or open chromatin regions from ATAC-seq.
 
