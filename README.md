@@ -38,6 +38,7 @@ LSF_SCRIPTS = "${BED_DIR}/lsf_jobs"
 
 # Create needed dirs
 mkdir -p "$OUTPUT_BASE"
+
 mkdir -p "$LSF_SCRIPTS"
 
 # Loop through .bed files
