@@ -48,8 +48,8 @@ for BED_FILE in "$BED_DIR"/*.bed; do
     # Write the LSF job file
     cat <<EOF > "$LSF_FILE"
 BSUB -W 240:00
-BSUB -o ${OUTPUT_DIR}/stdout.log
-BSUB -e ${OUTPUT_DIR}/stderr.log
+BSUB -o \${OUTPUT_DIR}/stdout.log
+BSUB -e \${OUTPUT_DIR}/stderr.log
 BSUB -cwd $PWD
 BSUB -q vlong 
 BSUB -n 1 
