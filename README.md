@@ -26,9 +26,9 @@ BED or FASTA files (for input peak files or genomic sequences)
 #!/bin/bash
 
 # Directories
-BED_DIR="/rsrch3/home/genomic_med/ssatpati/Gubin/2.process/homer"
+BED_DIR=""
 GENOME="mm10"
-PREPARSED_DIR="/rsrch3/home/genomic_med/ssatpati/Gubin/2.process/homer/homer_preparsed/mm10"
+PREPARSED_DIR=""
 OUTPUT_BASE="${BED_DIR}/motif_results"
 LSF_SCRIPTS="${BED_DIR}/lsf_jobs"
 
